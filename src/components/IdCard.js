@@ -1,18 +1,22 @@
-<>
-<IdCard
-    lastName='Doe'
-    firstName='John'
-    gender='male'
-    height={178}
-    birth={new Date("1992-07-14")}
-    picture="https://randomuser.me/api/portraits/men/44.jpg" 
-/>
-    
-<IdCard
-    lastName='Delores '
-    firstName='Obrien'
-    gender='female'
-    height={172}
-    birth={new Date("1988-05-11")}
-    picture="https://randomuser.me/api/portraits/women/44.jpg" /
-></>
+import React from 'react'
+
+function IdCard(props) {
+  console.log(props);
+
+  return (
+    <div className='IdCard box'>
+      <img src={props.picture} alt="ProfilePic"/>
+    <div className='right'>
+      <p><strong>First Name:</strong> {props.firstName}</p>
+      <p><strong>Last Name: </strong> {props.lastName}</p>
+      <p><strong>Gender: </strong>{props.gender}</p>
+      <p><strong>Height: </strong>{props.height}</p>
+      <p><strong>Birth: </strong>{props.birth.toDateString()}</p>
+    </div>
+    </div>
+
+
+  )
+}
+
+export default IdCard
